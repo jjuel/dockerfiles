@@ -38,5 +38,5 @@ WORKDIR $GOPATH
 
 
 #COPY go-wrapper /usr/local/bin
-#COPY ./.zshrc /root/.zshrc
-#COPY ./init.vim /root/.config/nvim/
+COPY ./.zshrc /root/.zshrc
+COPY ./init.vim /root/.config/nvim/
