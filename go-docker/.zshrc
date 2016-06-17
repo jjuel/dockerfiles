@@ -1,7 +1,7 @@
 archey
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/jordan/.oh-my-zsh
+export ZSH=/root/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -55,14 +55,8 @@ plugins=(git)
 
 # User configuration
 
-export PATH="$PATH:/Users/jordan/.rvm/gems/ruby-2.3.0/bin:/Users/jordan/.rvm/gems/ruby-2.3.0@global/bin:/Users/jordan/.rvm/rubies/ruby-2.3.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Users/jordan/.rvm/bin"
+export PATH="$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
-
-#Export the GOPATH
-export GOPATH=$HOME/Projects/Go
-
-#Add GOPATH to PATH
-export PATH=$PATH:$GOPATH
 
 source $ZSH/oh-my-zsh.sh
 

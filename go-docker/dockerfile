@@ -16,7 +16,8 @@ RUN apt-get update && apt-get install -y \
 	&& apt-get update \
 	&& apt-get install -y neovim --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
-	&& chsh -s /usr/bin/zsh
+	&& chsh -s /usr/bin/zsh \
+	&& pip install neovim
 
 RUN curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
 
@@ -37,6 +38,7 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 WORKDIR $GOPATH
 
 
-#COPY go-wrapper /usr/local/bin
 COPY ./.zshrc /root/.zshrc
 COPY ./init.vim /root/.config/nvim/
+
+CMD ["/bin/zsh"]
