@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
 	&& apt-get install -y neovim --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& chsh -s /usr/bin/zsh \
-	&& pip install neovim
+	&& pip3 install neovim
 
 RUN curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
 
