@@ -10,14 +10,8 @@ RUN apt-get update && apt-get install -y \
 	tmux \
 	curl \
 	zsh \
-	&&  echo "deb http://ppa.launchpad.net/neovim-ppa/unstable/ubuntu wily main" >> /etc/apt/sources.list \
-	&& echo "deb-src http://ppa.launchpad.net/neovim-ppa/unstable/ubuntu wily main" >> /etc/apt/sources.list \
-    	&& apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 9DBB0BE9366964F134855E2255F96FCF8231B6DD \
-	&& apt-get update \
-	&& apt-get install -y neovim --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
-	&& chsh -s /usr/bin/zsh \
-	&& pip3 install neovim
+	&& chsh -s /usr/bin/zsh 
 
 RUN curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
 
@@ -40,7 +34,6 @@ WORKDIR $GOPATH
 
 
 COPY ./.zshrc /root/.zshrc
-COPY ./init.vim /root/.config/nvim/
 COPY ./.oh-my-zsh /root/.oh-my-zsh/
 COPY ./autoload /root/.config/nvim/autoload
 

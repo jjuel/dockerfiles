@@ -1,0 +1,10 @@
+version: '3.4'
+services:
+    go-dev-env:
+        image: go-dev-env
+        build: .
+        volumes:
+            - ~/Projects/Go/dk_golf/:/go
+        tty: true
+        stdin_open: true
+        command: go get -u github.com/golang/dep/cmd/dep
